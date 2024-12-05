@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 5000; // Use environment port or default to 500
 app.use(cors()); // Enable CORS for all routes
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve static files from the uploads directory
 
+
+/* This code is uploaded from npmjs.com from package - multer : storage - DiskStorage  */
 // Configure file upload storage using multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -25,11 +27,13 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
 });
-
 const upload = multer({ storage: storage }); // Initialize multer with the defined storage settings
+
+
 
 // Connect to MongoDB using Mongoose
 mongoose.connect('mongodb://db1webspace:3456@db1@db1webspace/?ssl=true&replicaSet=atlas-28228u-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {});
+
 
 // Define the schema for a post
 const postSchema = new mongoose.Schema({
@@ -39,6 +43,7 @@ const postSchema = new mongoose.Schema({
     likes: { type: Number, default: 0 }, // Number of likes, default is 0
     comments: [{ text: String }] // Array of comments, each containing text
 });
+
 
 // Create a Post model from the schema
 const Post = mongoose.model('Post', postSchema);
