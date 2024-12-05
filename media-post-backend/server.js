@@ -29,10 +29,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }); // Initialize multer with the defined storage settings
 
 // Connect to MongoDB using Mongoose
-mongoose.connect('Your MongoDB connection string', {
-    useNewUrlParser: true, // Use new URL parser to avoid deprecation warnings
-    useUnifiedTopology: true // Use the new server discovery and monitoring engine
-});
+mongoose.connect('mongodb://db1webspace:3456@db1@db1webspace/?ssl=true&replicaSet=atlas-28228u-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {});
 
 // Define the schema for a post
 const postSchema = new mongoose.Schema({
