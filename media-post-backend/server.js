@@ -48,8 +48,10 @@ const postSchema = new mongoose.Schema({
 // Create a Post model from the schema
 const Post = mongoose.model('Post', postSchema);
 
-// Middleware for parsing JSON bodies
+
+// Middleware for parsing JSON bodies using body-parser
 app.use(bodyParser.json());
+
 
 // Route to fetch all posts
 app.get('/api/posts', async (req, res) => {
@@ -60,6 +62,7 @@ app.get('/api/posts', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' }); // Handle errors with a 500 response
     }
 });
+
 
 // Route to create a new post
 app.post('/api/posts', upload.single('file'), async (req, res) => {
