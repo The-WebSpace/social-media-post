@@ -113,3 +113,89 @@ Increments the like count of a specific post.
   "likes": 1,
   "comments": []
 }</code></pre>
+
+## 4. POST /api/posts/comment/:postid
+
+**Description**
+
+Adds a comment to a specific post.
+
+**Request Parameters**
+
+* **postid** (string) (Required): ID of the post to comment on.
+
+**Request Body**
+
+* **Content-Type:** application/json
+
+**Body Parameters**
+
+* **text** (string) (Required): The comment text.
+
+**Response**
+
+* **200 OK:** Returns the updated post with the new comment.
+* **404 Not Found:** If the post doesn't exist.
+* **500 Internal Server Error:** If there is an issue with the server.
+**Example Request**
+
+<pre><code>POST /api/posts/comment/63e4e1e8f4dbe8c28d44c001
+Content-Type: application/json
+
+{
+  "text": "Great post!"
+}</code></pre>
+
+## Example Response
+
+<pre><code>{
+  "_id": "63e4e1e8f4dbe8c28d44c001",
+  "title": "New Post",
+  "content": "This is a new post",
+  "file": "file-1675664689823.jpg",
+  "likes": 1,
+  "comments": [
+    {
+      "text": "Great post!"
+    }
+  ]
+}</code></pre>
+
+## Error Responses
+
+<table border="1">
+  <tr>
+    <th>Status Code</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>400</td>
+    <td>Bad Request - Missing or invalid fields</td>
+  </tr>
+  <tr>
+    <td>404</td>
+    <td>Not Found - Post does not exist</td>
+  </tr>
+  <tr>
+    <td>500</td>
+    <td>Internal Server Error - Server issues</td>
+  </tr>
+</table>
+
+## Setup Instructions
+
+### 1. Install dependencies:
+
+<pre><code>
+npm init -y
+npm install express mongoose cors body-parser multer uuid
+</code></pre>
+
+### 2. Run the server:
+
+<pre><code>node server.js</code></pre>
+
+### 3. Environment Variables:
+
+* **PORT** (optional): Port to run the server on (default: 5000).
+* MongoDB connection string should be placed in `mongoose.connect()`.
