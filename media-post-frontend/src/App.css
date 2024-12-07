@@ -1,219 +1,229 @@
-/* General styling for the home page */
-.home {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #f3f4f6;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: "Arial", sans-serif;
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Styling for each post */
-.post {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Responsive Fonts */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/* Global Styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #333;
+  animation: backgroundShift 5s infinite alternate;
+}
+
+/* Advanced Background Animation */
+@keyframes backgroundShift {
+  0% {
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  }
+  100% {
+    background: linear-gradient(135deg, #d3e0e9, #e0e7ff);
+  }
+}
+
+/* Advanced Navigation Bar */
+nav {
+  background: linear-gradient(90deg, #34495e, #2c3e50);
+  padding: 15px;
+  border-radius: 8px;
+  animation: slideDown 1s ease-out;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+nav li a:hover {
+  color: #3498db;
+  transform: scale(1.1);
+}
+
+/* Navigation animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Home Section */
+.home {
+  max-width: 800px;
+  margin: 30px auto;
   padding: 20px;
-  margin-bottom: 20px;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: bounceIn 1s ease-out;
+}
+
+.post {
+  background: linear-gradient(135deg, #ffffff, #e8eaf6);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  margin-bottom: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .post:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Styling for the post title */
-.post h3 {
-  color: #2c3e50;
-  font-size: 1.6rem;
-  margin-bottom: 10px;
+/* Advanced Animation on Enter */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-/* Styling for the post content */
-.post p {
-  color: #555555;
-  line-height: 1.8;
-  font-size: 1rem;
-}
-
-/* Styling for media in posts */
-.post img,
-.post video {
-  max-width: 100%;
-  height: auto;
-  margin-top: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Styling for post action buttons */
-.post button {
-  background-color: #3498db;
-  color: #fff;
+/* Buttons */
+button {
   padding: 10px 20px;
   font-size: 1rem;
+  color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-right: 10px;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
 }
 
-.post button:hover {
-  background-color: #2980b9;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+button:hover {
+  transform: scale(1.1) rotate(3deg);
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
 }
 
-/* Styling for comments */
-.post ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 10px 0;
-}
-
-.post li {
-  margin-bottom: 8px;
-  font-size: 0.9rem;
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-/* Styling for the comment input field */
-.comment-input {
-  width: calc(70% - 10px);
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fafafa;
-  margin-top: 10px;
-}
-
-/* Styling for the comment button */
-.comment-button {
-  background-color: #2ecc71;
-  color: #fff;
-  padding: 10px 16px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.comment-button:hover {
-  background-color: #27ae60;
-}
-
-/* Styling for the create-post form container */
+/* Form Section */
 .create-post {
   max-width: 600px;
-  margin: 20px auto;
   padding: 30px;
-  border: 1px solid #e0e0e0;
-  background-color: #ffffff;
+  margin: 30px auto;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 1.2s ease-in-out;
 }
 
-/* Styling for the create-post title */
 .create-post h2 {
-  color: #2c3e50;
   font-size: 1.8rem;
+  color: #34495e;
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Styling for input and textarea fields in the create-post form */
 .create-post input,
 .create-post textarea {
   width: 100%;
   margin: 10px 0;
   padding: 12px;
-  font-size: 1rem;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fafafa;
-  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
-/* Styling for the create-post button */
-.create-post button {
-  width: 100%;
-  background-color: #e67e22;
-  color: #fff;
-  padding: 12px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 8px;
+.create-post input:focus,
+.create-post textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0px 0px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Advanced Form Animation */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Floating button effect */
+.comment-button {
+  background: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.create-post button:hover {
-  background-color: #d35400;
-  transform: translateY(-2px);
+.comment-button:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0px 8px 15px rgba(52, 152, 219, 0.4);
 }
 
-/* Styling for the navigation bar */
-nav {
-  background-color: #34495e;
-  padding: 15px;
-  border-radius: 8px;
+
+/* Ensuring images are responsive across all screen sizes */
+.post img,
+.post video {
+  max-width: 100%; /* Allow images/videos to scale within their container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure proper display without spacing issues */
+  margin: 10px 0; /* Add some vertical spacing for better UI */
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  margin: 0 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #ecf0f1;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-nav a:hover {
-  color: #3498db;
-}
-
-/* Responsive Design */
+/* Additional responsive styles for varying screen sizes */
 @media (max-width: 768px) {
-  .home,
-  .create-post {
-    padding: 20px;
+  .post img,
+  .post video {
+    max-width: 90%;
   }
+}
 
-  .post {
-    padding: 15px;
-  }
-
-  .comment-input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .comment-button {
-    width: 100%;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-
-  nav li {
-    margin: 10px 0;
+@media (max-width: 480px) {
+  .post img,
+  .post video {
+    max-width: 100%;
   }
 }
