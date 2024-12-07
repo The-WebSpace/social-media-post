@@ -32,8 +32,24 @@ const upload = multer({ storage: storage }); // Initialize multer with the defin
 
 
 // Connect to MongoDB using Mongoose
-mongoose.connect('mongodb://db1webspace:3456@db1@db1webspace/?ssl=true&replicaSet=atlas-28228u-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {});
+const db = 
+ "mongodb+srv://db1webspace:3456bijay@cluster0.8cvaz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
+
+// mongoose.connect('mongodb://db1webspace:3456bijay@db1webspace/?ssl=true&replicaSet=atlas-28228u-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0', {
+// });
+
+const connectDB = async ()=> {
+    try{
+        await mongoose.connect(db);
+        console.log("MongoDB is connected....");
+    }catch(err){
+        console.error(err.message);
+        process.exit(1);
+    }
+ };
+
+ connectDB();
 
 // Define the schema for a post
 const postSchema = new mongoose.Schema({
