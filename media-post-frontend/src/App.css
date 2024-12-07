@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+/* General styling for the home page */
+.home {
+  max-width: 800px; /* Set the maximum width for the home container */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styling for each post */
+.post {
+  border: 1px solid #ddd; /* Light border around each post */
+  padding: 15px; /* Add padding inside the post container */
+  margin-bottom: 20px; /* Add space below each post */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styling for the post title */
+.post h3 {
+  color: #333; /* Dark gray color for the title text */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Styling for the post content */
+.post p {
+  color: #555; /* Slightly lighter gray color for the content text */
 }
 
-.App-link {
-  color: #61dafb;
+/* Styling for the create-post form container */
+.create-post {
+  max-width: 600px; /* Set the maximum width for the create post container */
+  margin: 20px auto; /* Center the container horizontally and add vertical margin */
+  padding: 20px; /* Add padding inside the container */
+  border: 1px solid #ddd; /* Light border around the container */
+  background-color: #fff; /* White background for the container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow effect */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styling for the create-post title */
+.create-post h2 {
+  color: #333; /* Dark gray color for the title text */
+}
+
+/* Styling for input and textarea fields in the create-post form */
+.create-post input,
+.create-post textarea {
+  width: 100%; /* Full width of the container */
+  margin: 10px 0; /* Add vertical spacing */
+  padding: 10px; /* Add padding inside the fields */
+}
+
+/* Styling for the create-post button */
+.create-post button {
+  background-color: #4caf50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px; /* Padding inside the button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for the comment input field */
+.comment-input {
+  margin-top: 10px; /* Add space above the input */
+  padding: 8px; /* Add padding inside the input */
+  width: 70%; /* Set width of the input */
+}
+
+/* Styling for the comment button */
+.comment-button {
+  background-color: #4caf50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 8px 16px; /* Padding inside the button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Styling for post media (images and videos) */
+.post img,
+.post video {
+  max-width: 100%; /* Set maximum width to container width */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Add space above media */
+}
+
+/* Styling for post action buttons */
+.post button {
+  background-color: #4caf50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 8px 16px; /* Padding inside the button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  margin-right: 10px; /* Add spacing between buttons */
+}
+
+/* Styling for the comment list */
+.post ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styling for individual comments */
+.post li {
+  margin-bottom: 5px; /* Add spacing between comments */
+}
+
+/* Styling for the overall app container */
+.app {
+  max-width: 800px; /* Set maximum width for the app */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Styling for the navigation bar */
+nav {
+  background-color: #333; /* Dark background color */
+  padding: 10px; /* Add padding inside the navigation bar */
+}
+
+/* Styling for the navigation list */
+nav ul {
+  list-style: none; /* Remove default bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Styling for individual navigation links */
+nav li {
+  display: inline-block; /* Display links inline */
+  margin-right: 20px; /* Add spacing between links */
+}
+
+/* Styling for navigation links */
+nav a {
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* White text color */
+  font-weight: bold; /* Bold text */
+  font-size: 16px; /* Set font size */
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+  color: #4caf50; /* Change color to green on hover */
+}
+
+/* Common styling for create-post and home sections */
+.create-post,
+.home {
+  border: 1px solid #ddd; /* Light border */
+  padding: 20px; /* Add padding inside the containers */
+  margin-bottom: 20px; /* Add spacing below each section */
+  background-color: #fff; /* White background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow effect */
+}
+
+/* Styling for titles in create-post and home sections */
+.home h2,
+.create-post h2 {
+  color: #333; /* Dark gray color for titles */
+}
+
+/* Styling for posts and buttons inside home and create-post sections */
+.home .post,
+.create-post {
+  margin-bottom: 30px; /* Add extra spacing below posts */
+}
+
+.home .post button,
+.create-post button {
+  background-color: #4caf50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 10px 15px; /* Padding inside the buttons */
+  border: none; /* Remove border */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Hover effect for buttons inside home and create-post sections */
+.home .post button:hover,
+.create-post button:hover {
+  background-color: #45a049; /* Slightly darker green color on hover */
 }
